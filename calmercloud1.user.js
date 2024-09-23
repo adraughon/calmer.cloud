@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         calmer.cloud
 // @namespace    https://calmer.cloud
-// @version      1.5
+// @version      1.6
 // @description  blurs images and videos on webpages
 // @author       Austin Draughon
 // @match        https://*/*
