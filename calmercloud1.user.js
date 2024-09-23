@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         calmer.cloud
 // @namespace    https://calmer.cloud
-// @version      1.2
+// @version      1.3
 // @description  blurs images and videos on webpages
 // @author       Austin Draughon
 // @match        https://*/*
@@ -19,7 +19,11 @@
     function calm(items) {
         items.forEach(item => {
             try {
-                if (item.nodeType === Node.ELEMENT_NODE) {
+                if (item.shadowRoot) {
+                        calm(item.shadowRoot.querySelectorAll('*:not(#parent)'));
+                        observeMutations(item.shadowRoot);
+                }
+                if (item.nodeType === Node.ELEMENT_NODE && !item.hasAttribute('calmed')) {
                     if (item.tagName === 'IMG' || item.tagName === 'IMAGE') {
                         item.style.filter = `blur(${blurAmount})`;
                     }
@@ -31,13 +35,10 @@
                     if (item.style.cssText.indexOf('background-image: url(') !== -1) {
                         item.style.filter = `blur(${blurAmount})`;
                     }
-                    if (item.shadowRoot) {
-                        calm(item.shadowRoot.querySelectorAll('*:not(#parent)'));
-                        observeMutations(item.shadowRoot);
-                    }
                     if (item.tagName === 'IFRAME') {
                         item.remove();
                     }
+                    item.setAttribute('calmed',true);
                 }
             } catch (error) {
                 console.log('calmer.cloud error:', error);
