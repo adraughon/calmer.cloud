@@ -7,8 +7,8 @@
 // @match        https://*/*
 // @icon         https://static.wixstatic.com/media/8cb6d1_8ad0e3bf9fad4d799f2ebffcebd4f136~mv2.png/v1/fill/w_686,h_686,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/medium_cloud.png
 // @grant        GM_xmlhttpRequest
-// @updateURL    https://raw.githubusercontent.com/adraughon/calmer.cloud/main/calmercloud1.user.js
-// @downloadURL  https://raw.githubusercontent.com/adraughon/calmer.cloud/main/calmercloud1.user.js
+// @updateURL    https://github.com/adraughon/calmer.cloud/raw/refs/heads/main/calmercloud1.user.js
+// @downloadURL  https://github.com/adraughon/calmer.cloud/raw/refs/heads/main/calmercloud1.user.js
 // ==/UserScript==
 
 (function() {
