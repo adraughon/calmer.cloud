@@ -73,9 +73,9 @@
     });
     window.scrollBy(0, 1);
 
-    //setInterval(() => {
-    //    calm(document.querySelectorAll('*'));
-    //}, 100);
+    setInterval(() => {
+        calm(document.querySelectorAll('*'));
+    }, 100);
 
 
     // End of file
